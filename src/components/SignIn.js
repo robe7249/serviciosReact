@@ -9,7 +9,6 @@ export default function SignIn() {
     const [password, setPassword] = useState("");
     const history = useHistory();
 
-
     function onChangeEmail(event) {
         setEmail(event.target.value)
     }
@@ -25,9 +24,6 @@ export default function SignIn() {
             email: email,
             password: password
         }
-
-
-        alert("Usuario Creado Correctamente")
 
         // fetch("www.mybackend.com", {
         //     method: "POST",
@@ -52,6 +48,12 @@ export default function SignIn() {
         //         }
         //     });
 
+
+        email === "admin@admin.com" && password === "admin" ? history.push("/employ") : alert("incorrecto")
+
+
+
+
     }
 
 
@@ -60,7 +62,7 @@ export default function SignIn() {
             <div className="row justify-content-center">
                 <Form className="col-sm-4 mt-4" onSubmit={onSubmitForm}>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label className="row justify-content-center" >Registrar Nuevo Usuario</Form.Label>
+                        <Form.Label className="row justify-content-center" >Inicio de Sesion</Form.Label>
                         <Form.Control type="email" placeholder="email" onChange={onChangeEmail} />
                         <Form.Text className="text-muted">
                         </Form.Text>
@@ -70,8 +72,8 @@ export default function SignIn() {
                         <Form.Control type="password" placeholder="Contraseña" onChange={onChangePassword} />
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Crear Cuenta
-                    </Button>
+                        Iniciar Sesion
+  </Button>
 
                 </Form>
             </div>

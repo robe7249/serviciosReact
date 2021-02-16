@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
+import { useHistory } from "react-router-dom";
 
 
 export default function SignUp() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const history = useHistory();
+
 
     function onChangeEmail(event) {
         setEmail(event.target.value)
@@ -22,7 +25,31 @@ export default function SignUp() {
             email: email,
             password: password
         }
-        alert("Incio de sesion Correctamente")
+        // fetch("www.mybackend.com", {
+        //     method: "POST",
+        //     body: JSON.stringify(user),
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
+        // })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         if (data.errors) {
+        //             console.log(data.errors);
+        //             alert("Ocurrió un error");
+        //         } else {
+        //             alert("Bienvenido!");
+
+        //             // Guardar el "token de la sesión" para usarlo posteriormente
+        //             localStorage.setItem("token", data.user.token);
+        //             localStorage.setItem("userName", data.user.username);
+
+        //             history.push("/employ");
+        //         }
+        //     });
+
+        alert("Usuario Creado Correctamente")
+        history.push("/employ")
     }
 
 
@@ -31,7 +58,7 @@ export default function SignUp() {
             <div className="row justify-content-center">
                 <Form className="col-sm-4 mt-4" onSubmit={onSubmitForm}>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label className="row justify-content-center" >Inicio de Sesion</Form.Label>
+                        <Form.Label className="row justify-content-center" >Registrar Nuevo Usuario</Form.Label>
                         <Form.Control type="email" placeholder="email" onChange={onChangeEmail} />
                         <Form.Text className="text-muted">
                         </Form.Text>
@@ -41,8 +68,8 @@ export default function SignUp() {
                         <Form.Control type="password" placeholder="Contraseña" onChange={onChangePassword} />
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Iniciar Sesion
-  </Button>
+                        Crear Cuenta
+                    </Button>
 
                 </Form>
             </div>

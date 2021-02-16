@@ -28,11 +28,11 @@ export default function NavBar() {
                     </Nav>
                     <Nav>
 
-                        <LinkContainer to="/signin">
+                        <LinkContainer to="/signup">
                             <Nav.Link>Registrarse</Nav.Link>
                         </LinkContainer>
 
-                        <LinkContainer to="/signup">
+                        <LinkContainer to="/signin">
                             <Nav.Link>Iniciar Sesion</Nav.Link>
                         </LinkContainer>
 
